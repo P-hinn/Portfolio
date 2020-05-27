@@ -4,6 +4,9 @@ import './App.css';
 import Project from '../Project/Project';
 import Skills from '../Skills/Skills';
 
+import jammingPic from '../Jammming.png';
+import ravenousPic from '../Ravenous.png';
+
 class App extends React.Component {
 
   project(projectName, description, logo, gitLink, demoLink) {
@@ -23,20 +26,20 @@ class App extends React.Component {
         <h1>
           Philipp Niestroj
         </h1>
-        <h2>
+        <h3>
           Software Developer
-        </h2>
+        </h3>
         <div className="backgroundFont">
           Projects
         </div>
         <div className="projects">
-          <Project project={this.jammming} />
-          <Project project={this.ravenous} />
+          <Project project={jammingPic} direction='expandToRight'/>
+          <Project project={ravenousPic} direction='expandToLeft'/>
         </div>
         <div className="skills">
-          <h3>
+          <h2>
             Skills
-          </h3>
+          </h2>
           <Skills />
         </div>
       </div>

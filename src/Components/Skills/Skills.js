@@ -5,7 +5,7 @@ class Skills extends React.Component{
     render(){
         return (
           <div>
-              Skills
+              Skilllist
           </div>
         );
       }
