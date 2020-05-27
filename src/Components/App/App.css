@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+
+  background-image: url('./galaxy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backgroundFont{
+  opacity: 0.2;
+  position: absolute;
+  top: 16%;
+  left: 0;
+  right: 0;
+  font-size: 288px;
+  z-index: 1;
+}
+
+.projects{
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+

@@ -1,0 +1,12 @@
+.project{
+    border: 1px solid white;
+    width: 400px;
+    display: inline-block;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+h3{
+    font-size: 36px;
+}
