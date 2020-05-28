@@ -6,28 +6,43 @@ class Project extends React.Component{
         super(props);
 
         this.state = {
-          displayProject: true,
-          displayInfo: false
-
+          active: 'show'
         }
 
         this.changeActiveProject = this.changeActiveProject.bind(this);
+        this.checkActive = this.checkActive.bind(this);
       }
 
       changeActiveProject() {
         this.props.changeActiveProject(this.props.project);
       }
 
+      onClickVal() {
+        //stopPropagation stops the click from bubbling to the parents
+        //That prevents the "Anti-outsideclick" to operate inside the projectcontainer
+        return !this.props.project.expand ? this.changeActiveProject : (e)=>{e.stopPropagation()}
+      }
+
+      async checkActive() {
+        // Wait
+        await new Promise(r => setTimeout(r, 1000));
+        const newVal = this.props.project.active ? 'show' : 'hide';
+
+        this.setState({
+          active: newVal
+        })
+      }
 
     render(){
 
         return (
           <div className={`
                 project row align-items-center justify-content-center
-                ${!this.props.project.active && 'hide'}
+                ${this.checkActive()}
+                ${this.state.active}
                 ${this.props.project.expand && 'expand'}
               `} 
-              onClick={this.changeActiveProject}
+              onClick={this.onClickVal()}
             >
               <div className="col align-items-center ">
                 <img src={this.props.project.logo} alt={this.props.project.projectName}></img>

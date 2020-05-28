@@ -20,11 +20,11 @@ h3{
 
 h6{
     font-size: 24px;
-    color: white;
 }
 
-a h6:hover{
+a:hover{
     color:gray;
+    transition: linear 0.1s;
 }
 
 p{
@@ -40,8 +40,18 @@ img{
    display: none;
 }
 
+.show{
+    animation: slideToRight 0.5s linear;
+}
+
+@keyframes slideToRight {
+    0% { opacity: 0; -webkit-transform: translateX(-100%); }   
+    100% { opacity: 1; -webkit-transform: translateX(0); }
+}
+
 .expand{
     width: 80%;
+    max-width: 1400px;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 1px 1px 3px black, 0 0 10px white;
     cursor: auto !important;

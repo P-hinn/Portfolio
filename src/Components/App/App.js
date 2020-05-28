@@ -40,7 +40,6 @@ class App extends React.Component {
   }
 
   closeProject(e){
-    console.log(e.currentTarget)
     const projects = this.state.projects;
 
     for(let i=0; i<projects.length; i++){
