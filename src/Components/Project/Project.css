@@ -6,7 +6,7 @@
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 10;
-    transition: all ease-in-out .3s;
+    transition: all .3s linear;
 }
 
 .project:hover{
@@ -41,7 +41,7 @@ img{
 }
 
 .show{
-    animation: slideToRight 0.5s linear;
+    animation: slideToRight 0.3s linear;
 }
 
 @keyframes slideToRight {
@@ -50,8 +50,8 @@ img{
 }
 
 .expand{
-    width: 80%;
-    max-width: 1400px;
+    width: 90%;
+    /* max-width: 1400px; */
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 1px 1px 3px black, 0 0 10px white;
     cursor: auto !important;
@@ -61,7 +61,6 @@ img{
 .description{
     max-height: 250px;
     overflow: hidden;
-    transition-delay: 1s;
 }
 
 .white{

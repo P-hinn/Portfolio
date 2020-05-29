@@ -10,7 +10,6 @@ class Project extends React.Component{
         }
 
         this.changeActiveProject = this.changeActiveProject.bind(this);
-        this.checkActive = this.checkActive.bind(this);
       }
 
       changeActiveProject() {
@@ -23,62 +22,52 @@ class Project extends React.Component{
         return !this.props.project.expand ? this.changeActiveProject : (e)=>{e.stopPropagation()}
       }
 
-      async checkActive() {
-        // Wait
-        await new Promise(r => setTimeout(r, 1000));
-        const newVal = this.props.project.active ? 'show' : 'hide';
-
-        this.setState({
-          active: newVal
-        })
-      }
 
     render(){
 
         return (
-          <div className={`
-                project row align-items-center justify-content-center
-                ${this.checkActive()}
-                ${this.state.active}
-                ${this.props.project.expand && 'expand'}
-              `} 
+          <div className={`${this.props.project.active ? '' : 'col-12 align-self-center' }`}>
+              <div className={`project row align-items-center justify-content-center
+              ${this.props.project.expand && 'expand'}
+              ${this.props.project.active ? 'show' : 'hide'}`}
               onClick={this.onClickVal()}
             >
-              <div className="col align-items-center ">
-                <img src={this.props.project.logo} alt={this.props.project.projectName}></img>
-                <h3>
-                  {this.props.project.name}
-                </h3>
-              </div>
-              <div 
-                className={`${!this.props.project.expand && 'hide'} col-9 align-self-center`}>
-                  <div className="row align-items-start">
-                    <p className="description">
-                      {this.props.project.description}
-                    </p>
-                  </div>
-                  <div className="row align-items-end justify-content-start">
-                    <div className="col-3">
-                      <a href={this.props.project.gitLink} 
-                        className="white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i className="fab fa-github fa-3x"></i>
-                        <h6>Github</h6>
-                      </a>
+                <div className="col">
+                  <img src={this.props.project.logo} alt={this.props.project.projectName}></img>
+                  <h3>
+                    {this.props.project.name}
+                  </h3>
+                </div>
+                <div 
+                  className={`${!this.props.project.expand && 'hide'} col-9 align-self-center`}>
+                    <div className="row align-items-start">
+                      <p className="description">
+                        {this.props.project.description}
+                      </p>
                     </div>
-                    <div className="col-3">
-                      <a href={this.props.project.demoLink} 
-                        className="white"
-                        target="_blank"
-                        rel="noopener noreferrer"  
-                      >
-                        <i className="far fa-window-maximize fa-3x"></i>
-                        <h6>Live Demo</h6>
-                      </a>
+                    <div className="row align-items-end justify-content-start">
+                      <div className="col-3">
+                        <a href={this.props.project.gitLink} 
+                          className="white"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i className="fab fa-github fa-3x"></i>
+                          <h6>Github</h6>
+                        </a>
+                      </div>
+                      <div className="col-3">
+                        <a href={this.props.project.demoLink} 
+                          className="white"
+                          target="_blank"
+                          rel="noopener noreferrer"  
+                        >
+                          <i className="far fa-window-maximize fa-3x"></i>
+                          <h6>Live Demo</h6>
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                </div>
               </div>
           </div>
         );

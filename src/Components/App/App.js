@@ -3,6 +3,7 @@ import './App.css';
 
 import ProjectList from '../ProjectList/ProjectList';
 import Skills from '../Skills/Skills';
+import Footer from '../Footer/Footer';
 
 import Jammming from '../utils/Jammming';
 import Ravenous from '../utils/Ravenous';
@@ -79,16 +80,6 @@ class App extends React.Component {
           <ProjectList 
             projects={this.state.projects}
             changeActiveProject={this.changeActiveProject}/>
-
-            {/* <Project project={Jammming} 
-            activeProject={this.state.activeProject}
-            direction='expandToRight'
-            onClick={this.activeProject}/>
-
-            <Project project={Ravenous} 
-            activeProject={this.state.activeProject}
-            direction='expandToLeft'
-            onClick={this.activeProject}/> */}
         </div>
         <div className="skills row align-items-center justify-content-center">
           <h2>
@@ -97,6 +88,9 @@ class App extends React.Component {
         </div>
         <div className="row align-items-center justify-content-center">
           <Skills />
+        </div>
+        <div className="row m-5 align-items-center justify-content-center">
+          <Footer />
         </div>
       </div>
     );
