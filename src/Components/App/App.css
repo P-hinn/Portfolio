@@ -21,9 +21,6 @@
 }
 
 .projects{
-  position: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   z-index: 5;
 }
@@ -42,6 +39,22 @@ h3{
 
 .darkLayer{
   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./galaxy.jpg');
+}
+
+.hide{
+  display: none;
+}
+
+.contact{
+  transform: translateY(-150%);
+  position: relative;
+  z-index: 10;
+  animation: slideIn .5s;
+}
+
+@keyframes slideIn{
+  from {transform: translateY(0)}
+  to {transform: translateY(-150%)}
 }
 
 

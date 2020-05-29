@@ -3,6 +3,7 @@ import './App.css';
 
 import ProjectList from '../ProjectList/ProjectList';
 import Skills from '../Skills/Skills';
+import ContactForm from '../ContactForm/ContactForm';
 import Footer from '../Footer/Footer';
 
 import Jammming from '../utils/Jammming';
@@ -14,11 +15,13 @@ class App extends React.Component {
 
     this.state = {
       projects: [Jammming, Ravenous],
-      darkLayer: false
+      darkLayer: false,
+      showContactForm: false
     }
 
     this.changeActiveProject = this.changeActiveProject.bind(this);
     this.closeProject = this.closeProject.bind(this);
+    this.openForm = this.openForm.bind(this);
   }
   
   changeActiveProject(activeProject){
@@ -50,8 +53,16 @@ class App extends React.Component {
 
     this.setState({
       projects: projects,
-      darkLayer: false
+      darkLayer: false,
+      showContactForm: false
     });
+  }
+
+  openForm(){
+    this.setState(oldState => ({
+      darkLayer: true,
+      showContactForm: !oldState.showContactForm
+    }));
   }
 
   
@@ -59,7 +70,7 @@ class App extends React.Component {
   render(){
     return (
       <div className={`App ${this.state.darkLayer && 'darkLayer'}`}
-        onClick={this.state.darkLayer ? this.closeProject : ()=>{}}>
+        onMouseDown={this.state.darkLayer || this.state.showContactForm ? this.closeProject : ()=>{}}>
         <div className="row m-5">
 
         </div>
@@ -90,7 +101,12 @@ class App extends React.Component {
           <Skills />
         </div>
         <div className="row m-5 align-items-center justify-content-center">
-          <Footer />
+          <Footer openForm={this.openForm}/>
+        </div>
+        <div className={`row justify-content-center align-items-center contact
+              ${this.state.showContactForm ? '' : 'hide'}`}>
+          <ContactForm active={this.state.showContactForm} 
+            changeActiveProject={this.changeActiveProject}/>
         </div>
       </div>
     );

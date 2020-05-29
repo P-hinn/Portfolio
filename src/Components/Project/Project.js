@@ -30,7 +30,7 @@ class Project extends React.Component{
               <div className={`project row align-items-center justify-content-center
               ${this.props.project.expand && 'expand'}
               ${this.props.project.active ? 'show' : 'hide'}`}
-              onClick={this.onClickVal()}
+              onMouseDown={this.onClickVal()}
             >
                 <div className="col">
                   <img src={this.props.project.logo} alt={this.props.project.projectName}></img>

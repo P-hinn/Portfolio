@@ -1,0 +1,16 @@
+.contactForm{
+    max-height: 1000px;
+    width: 800px;
+    border: 1px solid white;
+    background-color: rgba(56, 56, 56, 0.99);
+    box-shadow: 1px 1px 3px black, 0 0 10px white;
+}
+
+label{
+    font-size: 24px;
+}
+
+.message{
+    height: 300px;
+    resize: none;
+}

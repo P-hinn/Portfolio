@@ -1,18 +1,18 @@
 import React from 'react';
 import './Skills.css';
 
-import HTML from './HTML.svg';
-import CSS from './CSS.svg';
-import JS from './JS.svg';
-import ReactImg from './React.svg';
-import Node from './Node.svg';
-import CSharp from './CSharp.svg';
-import Git from './Git.svg';
-import Figma from './Figma.svg';
-import PhotoShop from './PhotoShop.svg';
-import Blender from './Blender.svg';
-import LV from './LV.svg';
-import FLStudio from './FLStudio.svg';
+import HTML from './Icons/HTML.svg';
+import CSS from './Icons/CSS.svg';
+import JS from './Icons/JS.svg';
+import ReactImg from './Icons/React.svg';
+import Node from './Icons/Node.svg';
+import CSharp from './Icons/CSharp.svg';
+import Git from './Icons/Git.svg';
+import Figma from './Icons/Figma.svg';
+import PhotoShop from './Icons/PhotoShop.svg';
+import Blender from './Icons/Blender.svg';
+import LV from './Icons/LV.svg';
+import FLStudio from './Icons/FLStudio.svg';
 
 
 class Skills extends React.Component{
@@ -28,7 +28,7 @@ class Skills extends React.Component{
         HTML, CSS, JS, ReactImg, Node, CSharp, Git, Figma, PhotoShop, Blender, LV, FLStudio
       ];
       const logoNames = [
-        'HTML', 'CSS', 'JS', 'ReactImg', 'Node', 'CSharp', 'Git', 'Figma', 'PhotoShop', 'Blender', 'LV', 'FLStudio'
+        'HTML', 'CSS', 'JS', 'React', 'Node', 'CSharp', 'Git', 'Figma', 'PhotoShop', 'Blender', 'LV', 'FLStudio'
       ]
       console.log(HTML);
 
@@ -36,7 +36,7 @@ class Skills extends React.Component{
         returnVal.push(
         <div className="col m-3" key={[i]}>
           <div className="row align-items-center justify-content-center">
-            <img src={logoArray[i]} className="skillLogo"></img> 
+            <img src={logoArray[i]} className="skillLogo" alt=''></img> 
           </div>
           <div className="row align-items-center justify-content-center">
             {logoNames[i]} 
