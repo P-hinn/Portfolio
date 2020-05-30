@@ -2,8 +2,6 @@
     border: 1px solid white;
     width: 400px;
     height: 400px;
-    margin: 50px;
-    padding: 30px;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 10;
     transition: all .3s linear;
@@ -69,4 +67,22 @@ img{
 
 .white:hover{
     color: gray;
+}
+
+@media (max-width: 700px){
+    .project{
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+    }
+    .description{
+        height: auto;
+        max-height: 1000px;
+        overflow: auto;
+    }
+
+    .expand{
+        width: 100%;
+        display: inline-block;
+    }
 }

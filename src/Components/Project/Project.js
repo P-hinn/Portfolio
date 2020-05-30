@@ -27,7 +27,7 @@ class Project extends React.Component{
 
         return (
           <div className={`${this.props.project.active ? '' : 'col-12 align-self-center' }`}>
-              <div className={`project row align-items-center justify-content-center
+              <div className={`project row align-items-center justify-content-center m-4
               ${this.props.project.expand && 'expand'}
               ${this.props.project.active ? 'show' : 'hide'}`}
               onMouseDown={this.onClickVal()}
@@ -40,13 +40,13 @@ class Project extends React.Component{
                 </div>
                 <div 
                   className={`${!this.props.project.expand && 'hide'} col-9 align-self-center`}>
-                    <div className="row align-items-start">
-                      <p className="description">
+                    <div className="row align-items-center justify-content-center">
+                      <p className="description text-align-center">
                         {this.props.project.description}
                       </p>
                     </div>
-                    <div className="row align-items-end justify-content-start">
-                      <div className="col-3">
+                    <div className="row align-items-center justify-content-center">
+                      <div className="col-3 col-xs-1">
                         <a href={this.props.project.gitLink} 
                           className="white"
                           target="_blank"
@@ -56,7 +56,7 @@ class Project extends React.Component{
                           <h6>Github</h6>
                         </a>
                       </div>
-                      <div className="col-3">
+                      <div className="col-3 col-xs-1">
                         <a href={this.props.project.demoLink} 
                           className="white"
                           target="_blank"

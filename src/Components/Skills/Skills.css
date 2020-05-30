@@ -2,3 +2,14 @@
     width: 50px;
     height: 50px;
 }
+
+.skill{
+    transition: all .8s;
+    border-radius: 15px;
+    border: 1px solid transparent;
+}
+
+.skill:hover{
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid white;
+}

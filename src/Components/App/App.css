@@ -57,4 +57,27 @@ h3{
   to {transform: translateY(-150%)}
 }
 
+.projectMobile{
+  display: none;
+}
+
+
+@media (max-width:1000px){
+  .App{
+    overflow-y: auto;
+    -ms-overflow-style: none;
+  }
+
+  .App::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .backgroundFont{
+    display: none;
+  }
+
+  .projectMobile{
+    display: inline-block;
+  }
+}
 

@@ -34,11 +34,11 @@ class Skills extends React.Component{
 
       for(let i=0; i<logoArray.length ; i++) {
         returnVal.push(
-        <div className="col m-3" key={[i]}>
+        <div className="col-m-12  mx-1 py-3 px-4 skill" key={[i]}>
           <div className="row align-items-center justify-content-center">
             <img src={logoArray[i]} className="skillLogo" alt=''></img> 
           </div>
-          <div className="row align-items-center justify-content-center">
+          <div className="row m-1 align-items-center justify-content-center">
             {logoNames[i]} 
           </div>
         </div>);

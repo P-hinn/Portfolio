@@ -88,6 +88,7 @@ class App extends React.Component {
           Projects
         </div>
         <div className="projects row m-5 align-items-center justify-content-center">
+          <div className="projectMobile"><h3>Projects</h3></div>
           <ProjectList 
             projects={this.state.projects}
             changeActiveProject={this.changeActiveProject}/>
