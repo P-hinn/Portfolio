@@ -8,13 +8,14 @@ import Footer from '../Footer/Footer';
 
 import Jammming from '../utils/Jammming';
 import Ravenous from '../utils/Ravenous';
+import Portfolio_2 from '../utils/Portfolio_2';
 
 class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      projects: [Jammming, Ravenous],
+      projects: [Jammming, Ravenous, Portfolio_2],
       darkLayer: false,
       showContactForm: false
     }

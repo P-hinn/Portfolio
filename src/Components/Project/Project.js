@@ -46,7 +46,7 @@ class Project extends React.Component{
                       </p>
                     </div>
                     <div className="row align-items-center justify-content-center">
-                      <div className="col-3 col-xs-1">
+                      <div className={`col-3 col-xs-1 ${this.props.project.gitLink === "Figma" ? 'hide': ''}`}>
                         <a href={this.props.project.gitLink} 
                           className="white"
                           target="_blank"
