@@ -5,6 +5,8 @@ class Project extends React.Component{
     constructor(props){
         super(props);
 
+        this.myRef = React.createRef();
+
         this.state = {
           active: 'show'
         }
@@ -14,6 +16,7 @@ class Project extends React.Component{
 
       changeActiveProject() {
         this.props.changeActiveProject(this.props.project);
+        this.props.scrollTo(this.myRef);
       }
 
       onClickVal() {
@@ -28,9 +31,10 @@ class Project extends React.Component{
         return (
           
               <div className={`project row align-items-center justify-content-center m-4
-              ${this.props.project.expand && 'expand'}
-              ${this.props.project.active ? 'show' : 'hide'}`}
+              ${this.props.project.expand ? 'col-10' : 'col'}
+              ${this.props.project.active ? '' : ''}`}
               onMouseDown={this.onClickVal()}
+              ref={this.myRef}
             >
                 <div className="col">
                   <img src={this.props.project.logo} alt={this.props.project.projectName}></img>
