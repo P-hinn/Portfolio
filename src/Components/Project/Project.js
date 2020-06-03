@@ -26,7 +26,7 @@ class Project extends React.Component{
     render(){
 
         return (
-          <div className={`${this.props.project.active ? '' : 'col-12 align-self-center' }`}>
+          
               <div className={`project row align-items-center justify-content-center m-4
               ${this.props.project.expand && 'expand'}
               ${this.props.project.active ? 'show' : 'hide'}`}
@@ -45,7 +45,7 @@ class Project extends React.Component{
                         {this.props.project.description}
                       </p>
                     </div>
-                    <div className="row align-items-center justify-content-center">
+                    <div className="row align-items-end justify-content-center">
                       <div className={`col-3 col-xs-1 ${this.props.project.gitLink === "Figma" ? 'hide': ''}`}>
                         <a href={this.props.project.gitLink} 
                           className="white"
@@ -69,7 +69,7 @@ class Project extends React.Component{
                     </div>
                 </div>
               </div>
-          </div>
+          
         );
       }
 }

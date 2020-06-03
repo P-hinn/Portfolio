@@ -1,3 +1,33 @@
 .ProjectList{
-    transition: all 0.3s;
+    transition: all 0.3s;  
+}
+
+.ProjectList > .row {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.ProjectList > .row > .col-xs-4 {
+    display: inline-block;
+    float: none;
+}
+
+.ProjectList .row::-webkit-scrollbar-track
+{
+	
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.24);
+}
+
+.ProjectList .row::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+.ProjectList .row::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: grey;
 }

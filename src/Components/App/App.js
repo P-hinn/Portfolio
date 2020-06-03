@@ -9,13 +9,14 @@ import Footer from '../Footer/Footer';
 import Jammming from '../utils/Jammming';
 import Ravenous from '../utils/Ravenous';
 import Portfolio_2 from '../utils/Portfolio_2';
+import Parallax from '../utils/Parallax';
 
 class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      projects: [Jammming, Ravenous, Portfolio_2],
+      projects: [Jammming, Ravenous, Portfolio_2, Parallax],
       darkLayer: false,
       showContactForm: false
     }
@@ -85,14 +86,16 @@ class App extends React.Component {
             Software Developer
           </h3>
         </div>
-        <div className="backgroundFont">
+        <div className="row align-items-center justify-content-center backgroundFont">
           Projects
         </div>
-        <div className="projects row m-5 align-items-center justify-content-center">
-          <div className="projectMobile"><h3>Projects</h3></div>
-          <ProjectList 
-            projects={this.state.projects}
-            changeActiveProject={this.changeActiveProject}/>
+        <div className="projects row m-2 m-md-4 align-items-center justify-content-center">
+          <div className="col-12">
+            <div className="projectMobile"><h3>Projects</h3></div>
+            <ProjectList 
+              projects={this.state.projects}
+              changeActiveProject={this.changeActiveProject}/>
+          </div>
         </div>
         <div className="skills row align-items-center justify-content-center">
           <h2>
