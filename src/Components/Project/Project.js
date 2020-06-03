@@ -33,26 +33,26 @@ class Project extends React.Component{
         return (
           
               <div className={`project row align-items-center justify-content-center m-4
-              ${this.props.project.expand ? 'col-10' : 'col'}
-              ${this.props.project.active ? '' : ''}`}
+              ${this.props.project.expand ? 'col-10' : 'col'}`}
               onMouseDown={this.onClickVal()}
               ref={this.projectRef}
             >
-                <div className="col">
+                <div className="col col-m-4 col-xs-12 ">
                   <img src={this.props.project.logo} alt={this.props.project.projectName}></img>
                   <h3>
                     {this.props.project.name}
                   </h3>
                 </div>
                 <div 
-                  className={`${!this.props.project.expand && 'hide'} col-9 align-self-center`}>
+                  className={`${!this.props.project.expand ? 'hide' : 'col-md-8 col-xs-11'} align-self-center`}>
                     <div className="row align-items-center justify-content-center">
                       <p className="description text-align-center">
                         {this.props.project.description}
                       </p>
                     </div>
                     <div className="row align-items-end justify-content-center">
-                      <div className={`col-3 col-xs-1 ${this.props.project.gitLink === "Figma" ? 'hide': ''}`}>
+                      <div className={`col col-m-4 col-xs-6
+                          ${this.props.project.gitLink === "Figma" ? 'hide': ''}`}>
                         <a href={this.props.project.gitLink} 
                           className="white"
                           target="_blank"
@@ -62,7 +62,7 @@ class Project extends React.Component{
                           <h6>Github</h6>
                         </a>
                       </div>
-                      <div className="col-3 col-xs-1">
+                      <div className="col col-m-4 col-xs-6 ">
                         <a href={this.props.project.demoLink} 
                           className="white"
                           target="_blank"

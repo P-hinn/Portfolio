@@ -100,7 +100,7 @@ class App extends React.Component {
               changeActiveProject={this.changeActiveProject}/>
           </div>
         </div>
-        <div className="skills row align-items-center justify-content-center">
+        <div className="skills row align-items-center justify-content-center mt-5">
           <h2>
             Skills
           </h2>

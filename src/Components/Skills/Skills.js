@@ -30,7 +30,6 @@ class Skills extends React.Component{
       const logoNames = [
         'HTML', 'CSS', 'JS', 'React', 'Node', 'CSharp', 'Git', 'Figma', 'PhotoShop', 'Blender', 'LV', 'FLStudio'
       ]
-      console.log(HTML);
 
       for(let i=0; i<logoArray.length ; i++) {
         returnVal.push(
