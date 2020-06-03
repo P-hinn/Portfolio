@@ -10,18 +10,20 @@ class ProjectList extends React.Component{
     constructor(props){
         super(props);
 
-        this.myRef = React.createRef();
+        this.scrollRef = React.createRef();
 
         this.divMouseDown = this.divMouseDown.bind(this);
         this.scrollTo = this.scrollTo.bind(this);
     }
 
     divMouseDown(e) {
+        //Prevent closing of Project when scrollBar is clicked
         e.stopPropagation();        
       }
 
-      scrollTo(ref){
-        this.myRef.current.scrollLeft = ref.current.offsetLeft;
+      scrollTo(projectRef){
+          //Scroll horizontal bar to clicked Project (still buggy)
+        this.scrollRef.current.scrollLeft = projectRef.current.offsetLeft;
      }
 
     render() {
@@ -30,7 +32,7 @@ class ProjectList extends React.Component{
                 <ScrollContainer className="row text-center scroll-container" 
                     hideScrollbars={false}
                     horizontal={true} 
-                    ref = {this.myRef}>
+                    ref = {this.scrollRef}>
                 {
                     this.props.projects.map(project => {
                         return <Project 

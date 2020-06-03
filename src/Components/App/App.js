@@ -27,6 +27,7 @@ class App extends React.Component {
   }
   
   changeActiveProject(activeProject){
+    //Set Project Active
     const projects = this.state.projects;
 
     for(let i=0; i<projects.length; i++){
@@ -46,6 +47,7 @@ class App extends React.Component {
   }
 
   closeProject(e){
+    //Close Active Project
     const projects = this.state.projects;
 
     for(let i=0; i<projects.length; i++){
@@ -61,6 +63,7 @@ class App extends React.Component {
   }
 
   openForm(){
+    //Open Contact Form
     this.setState(oldState => ({
       darkLayer: true,
       showContactForm: !oldState.showContactForm
