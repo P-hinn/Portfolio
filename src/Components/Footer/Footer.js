@@ -16,7 +16,7 @@ class Footer extends React.Component{
             <div className="row justify-content-center align-items-center">
                 <div className="col m-4" 
                 onClick={this.openForm}>
-                     <a href="#" className="white"> 
+                     <a href="mailto:contact@philippniestroj.com" className="white"> 
                         <i className="fas fa-envelope fa-3x"></i>
                         <h5>Contact</h5>
                     </a>
