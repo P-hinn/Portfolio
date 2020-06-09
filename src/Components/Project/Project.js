@@ -44,7 +44,8 @@ class Project extends React.Component{
                   </h3>
                 </div>
                 <div 
-                  className={`${!this.props.project.expand ? 'hide' : 'col-md-8 col-xs-11'} align-self-center`}>
+                  className={`${!this.props.project.expand ? 'hide' : 'col-md-8 col-xs-11'} 
+                              align-self-center`}>
                     <div className="row align-items-center justify-content-center">
                       <p className="description text-align-center">
                         {this.props.project.description}

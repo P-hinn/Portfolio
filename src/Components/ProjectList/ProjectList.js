@@ -5,6 +5,10 @@ import './ProjectList.css';
 
 import Project from '../Project/Project';
 
+const paraStyle = {
+    'background-image': 'url(../App/background-stars.png)' 
+}
+
 
 class ProjectList extends React.Component{
     constructor(props){
@@ -23,26 +27,29 @@ class ProjectList extends React.Component{
 
       scrollTo(projectRef){
           //Scroll horizontal bar to clicked Project (still buggy)
-        this.scrollRef.current.scrollLeft = projectRef.current.offsetLeft;
+        this.scrollRef.current.scrollLeft = projectRef.current.offsetLeft + 100;
+        console.log(projectRef.current.offsetLeft);
+        console.log(this.scrollRef.current.scrollLeft);
      }
 
     render() {
         return (
-            <div className="row m-2 ProjectList justify-content-center " onMouseDown={this.divMouseDown}>
+            <div className="row m-2 ProjectList justify-content-center " 
+                onMouseDown={this.divMouseDown}>
                 <ScrollContainer className="row text-center scroll-container" 
-                    hideScrollbars={false}
-                    horizontal={true} 
-                    ref = {this.scrollRef}>
-                {
-                    this.props.projects.map(project => {
-                        return <Project 
-                                project={project}
-                                changeActiveProject={this.props.changeActiveProject}
-                                key={project.name}
-                                scrollTo={this.scrollTo}
-                                />
-                    })
-                }
+                        hideScrollbars={false}
+                        horizontal={true} 
+                        ref = {this.scrollRef}>
+                        {
+                            this.props.projects.map(project => {
+                                return <Project 
+                                        project={project}
+                                        changeActiveProject={this.props.changeActiveProject}
+                                        key={project.name}
+                                        scrollTo={this.scrollTo}
+                                        />
+                            })
+                        }
                 </ScrollContainer>
             </div>
         )

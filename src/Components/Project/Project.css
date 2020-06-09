@@ -1,8 +1,9 @@
 .project{
     border: 1px solid white;
     min-width: 400px;
+    max-width: 1000px;
     height: 400px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
     z-index: 10;
     transition: all .3s linear;
     white-space: normal;
@@ -15,6 +16,7 @@
 
 .project:hover{
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 h3{
