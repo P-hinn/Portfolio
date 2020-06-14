@@ -91,9 +91,11 @@ class App extends React.Component {
       <div className={`App ${this.state.darkLayer && 'darkLayer'}`}
         onMouseDown={this.state.darkLayer || this.state.showContactForm ? this.closeProject : ()=>{}}
         onMouseMove={this._onMouseMove.bind(this)}>
+          <div className="crop">
           <img className="stars" src={starsPic} alt="backgroundStars"
               style={{left: this.state.x, top: this.state.y}}>
               </img>
+          </div>
           <div className="row m-5">
 
           </div>
