@@ -5,10 +5,6 @@ import './ProjectList.css';
 
 import Project from '../Project/Project';
 
-const paraStyle = {
-    'background-image': 'url(../App/background-stars.png)' 
-}
-
 
 class ProjectList extends React.Component{
     constructor(props){

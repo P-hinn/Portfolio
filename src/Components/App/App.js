@@ -11,6 +11,8 @@ import Ravenous from '../utils/Ravenous';
 import Portfolio_2 from '../utils/Portfolio_2';
 import Parallax from '../utils/Parallax';
 
+import starsPic from './background-stars.png';
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -18,7 +20,9 @@ class App extends React.Component {
     this.state = {
       projects: [Jammming, Ravenous, Portfolio_2, Parallax],
       darkLayer: false,
-      showContactForm: false
+      showContactForm: false,
+      x: -3236,
+      y: -1821
     }
 
     this.changeActiveProject = this.changeActiveProject.bind(this);
@@ -70,12 +74,26 @@ class App extends React.Component {
     }));
   }
 
+  _onMouseMove(e) {
+    let x = (e.nativeEvent.offsetX/2) -3236;
+    let y = (e.nativeEvent.offsetY/2) -1821;
+
+    x = x < -3600 ? 3600 : x > -2900 ? -2900: x;
+    y = y < -2200 ? 2200 : y > -1400 ? -1400: y;
+
+    this.setState({ x: x, y: y });
+  }
+
   
 
   render(){
     return (
       <div className={`App ${this.state.darkLayer && 'darkLayer'}`}
-        onMouseDown={this.state.darkLayer || this.state.showContactForm ? this.closeProject : ()=>{}}>
+        onMouseDown={this.state.darkLayer || this.state.showContactForm ? this.closeProject : ()=>{}}
+        onMouseMove={this._onMouseMove.bind(this)}>
+          <img className="stars" src={starsPic} alt="backgroundStars"
+              style={{left: this.state.x, top: this.state.y}}>
+              </img>
           <div className="row m-5">
 
           </div>
@@ -114,8 +132,8 @@ class App extends React.Component {
           </div>
           <div className={`row justify-content-center align-items-center contact
                 ${this.state.showContactForm ? '' : 'hide'}`}>
-            {/* <ContactForm active={this.state.showContactForm} 
-              changeActiveProject={this.changeActiveProject}/> */}
+            <ContactForm active={this.state.showContactForm} 
+              changeActiveProject={this.changeActiveProject}/>
           </div>
       </div>
     );

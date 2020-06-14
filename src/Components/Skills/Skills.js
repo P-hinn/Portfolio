@@ -28,7 +28,7 @@ class Skills extends React.Component{
         HTML, CSS, JS, ReactImg, Node, CSharp, Git, Figma, PhotoShop, Blender, LV, FLStudio
       ];
       const logoNames = [
-        'HTML', 'CSS', 'JS', 'React', 'Node', 'CSharp', 'Git', 'Figma', 'PhotoShop', 'Blender', 'LV', 'FLStudio'
+        'HTML', 'CSS', 'JS', 'React', 'Node', 'CSharp', 'Git', 'Figma', 'Photo\nShop', 'Blender', 'LV', 'FLStudio'
       ]
 
       for(let i=0; i<logoArray.length ; i++) {
