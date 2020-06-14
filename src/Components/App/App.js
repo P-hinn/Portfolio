@@ -134,8 +134,8 @@ class App extends React.Component {
           </div>
           <div className={`row justify-content-center align-items-center contact
                 ${this.state.showContactForm ? '' : 'hide'}`}>
-            <ContactForm active={this.state.showContactForm} 
-              changeActiveProject={this.changeActiveProject}/>
+            {/* <ContactForm active={this.state.showContactForm} 
+              changeActiveProject={this.changeActiveProject}/> */}
           </div>
       </div>
     );
