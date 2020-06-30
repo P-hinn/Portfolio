@@ -23,7 +23,8 @@ class ProjectList extends React.Component{
 
       scrollTo(projectRef){
           //Scroll horizontal bar to clicked Project (still buggy)
-        this.scrollRef.current.scrollLeft = projectRef.current.offsetLeft + 100;
+          console.log(this.scrollRef.current.scrollLeft);
+        this.scrollRef.current.scrollLeft = projectRef.current.offsetLeft-120;
         console.log(projectRef.current.offsetLeft);
         console.log(this.scrollRef.current.scrollLeft);
      }

@@ -27,7 +27,7 @@ class App extends React.Component {
 
     this.changeActiveProject = this.changeActiveProject.bind(this);
     this.closeProject = this.closeProject.bind(this);
-    this.openForm = this.openForm.bind(this);
+    this.setForm = this.setForm.bind(this);
   }
   
   changeActiveProject(activeProject){
@@ -66,10 +66,10 @@ class App extends React.Component {
     });
   }
 
-  openForm(){
+  setForm(){
     //Open Contact Form
     this.setState(oldState => ({
-      darkLayer: true,
+      darkLayer: !oldState.darkLayer,
       showContactForm: !oldState.showContactForm
     }));
   }
@@ -130,12 +130,12 @@ class App extends React.Component {
             <Skills />
           </div>
           <div className="row m-5 align-items-center justify-content-center">
-            <Footer openForm={this.openForm}/>
+            <Footer openForm={this.setForm}/>
           </div>
           <div className={`row justify-content-center align-items-center contact
                 ${this.state.showContactForm ? '' : 'hide'}`}>
-            {/* <ContactForm active={this.state.showContactForm} 
-              changeActiveProject={this.changeActiveProject}/> */}
+            <ContactForm setForm={this.setForm}
+              active={this.state.showContactForm} />
           </div>
       </div>
     );

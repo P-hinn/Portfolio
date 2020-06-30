@@ -2,6 +2,8 @@ import React from 'react';
 
 import './ContactForm.css';
 
+const API_PATH = 'https://www.philippniestroj.com/TestSuite/ContactForm.php';
+
 class ContactForm extends React.Component{
 
     constructor(props){
@@ -15,13 +17,12 @@ class ContactForm extends React.Component{
 
         this.onClickVal = this.onClickVal.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     onClickVal() {
         //stopPropagation stops the click from bubbling to the parents
         //That prevents the "Anti-outsideclick" to operate inside the projectcontainer
-        return !this.props.active ? this.changeActiveProject : (e)=>{e.stopPropagation()}
+        return !this.props.active ? this.props.setForm : (e)=>{e.stopPropagation()}
       }
 
       handleInputChange(event) {
@@ -33,17 +34,11 @@ class ContactForm extends React.Component{
           [name]: value
         });
       }
-    
-      handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
-        event.preventDefault();
-      }
 
     render(){
         return(
-            <div className="contactForm col-6" onMouseDown={this.onClickVal()} >
-                <form action="https://www.philippniestroj.com/cgi-bin/FormMail.pl" method="post"
-                acceptCharset="ISO-8859-1" onSubmit={this.handleSubmit}>
+            <div className="contactForm col-m-6 col-11 " onMouseDown={this.onClickVal()} >
+                <form action="./ContactForm.php" method="POST">
                     <div className="form-group ">
                         
                         <h3 className="m-4">Contact Me</h3>
@@ -71,18 +66,16 @@ class ContactForm extends React.Component{
                                 value={this.state.textValue} 
                                 onChange={this.handleInputChange}/>
                         
+                        <input className="btn btn-outline-light btn-lg m-4"
+                            onClick={this.props.setForm}
+                            value="close"
+                            style={{width: '100px'}} />
+
                         <input type="submit"
-                            className="btn btn-outline-light btn-lg m-4 px-5"
-                             value="Send"/>
-
-
-                        <input type="hidden" className="recipient" value="contact@philippniestroj.com" />
-                        <input type="hidden" className="subject" value="Subject" />
-                        <input type="hidden" className="redirect" 
-                        value="https://www.philippniestroj.com/danke.html" />
-                        <input type="hidden" className="missing_fields_redirect" 
-                        value="https://www.philippniestroj.com/error.html" />
-                        <input type="hidden" className="required" value="realname,email,message" />
+                            className="btn btn-outline-light btn-lg m-4"
+                            name="submit"
+                             value="Send"
+                             style={{width: '100px'}}/>
                     </div>
                 </form>
             </div>

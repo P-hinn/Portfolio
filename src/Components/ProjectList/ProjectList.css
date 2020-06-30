@@ -8,7 +8,6 @@
     flex-wrap: nowrap;
 }
 
-
 .scroll-container::-webkit-scrollbar-track
 {
 	border-radius: 10px;

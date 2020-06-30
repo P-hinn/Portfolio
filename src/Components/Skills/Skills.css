@@ -7,6 +7,7 @@
     transition: all .8s;
     border-radius: 15px;
     border: 1px solid transparent;
+    z-index: 2;
 }
 
 .skill:hover{
