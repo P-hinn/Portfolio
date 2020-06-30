@@ -7,4 +7,3 @@ My portfolio website is a react app that works with Bootstrap and React-Indiana-
 - Contact Form 
 - If a Project is clicked, it should slide in Focus so you can see the whole Container
 - Tablet Size disables scroll, but doesn't show all the Content
-- Parallax Effect with Star.png Layer
