@@ -1,7 +1,14 @@
 import React from 'react';
 import './App.css';
 
+import {
+  BrowserView,
+  MobileView,
+  isMobile
+} from "react-device-detect";
+
 import ProjectList from '../ProjectList/ProjectList';
+import ProjectListMobile from '../ProjectList/ProjectListMobile';
 import Skills from '../Skills/Skills';
 import ContactForm from '../ContactForm/ContactForm';
 import Footer from '../Footer/Footer';
@@ -28,6 +35,17 @@ class App extends React.Component {
     this.changeActiveProject = this.changeActiveProject.bind(this);
     this.closeProject = this.closeProject.bind(this);
     this.setForm = this.setForm.bind(this);
+  }
+
+  componentWillMount(e){
+    const projects = this.state.projects;
+
+    if(isMobile){
+      for(let i=0; i<projects.length; i++){
+          projects[i].active = true;
+          projects[i].expand = true;
+      }
+    }
   }
   
   changeActiveProject(activeProject){
@@ -96,7 +114,7 @@ class App extends React.Component {
               style={{left: this.state.x, top: this.state.y}}>
               </img>
           </div>
-          <div className="row m-5">
+          <div className="row m-md-5 m-mx-1">
 
           </div>
           <div className="row align-items-center justify-content-center">
@@ -114,11 +132,18 @@ class App extends React.Component {
           </div>
           <div className="projects row m-2 m-md-4 align-items-center justify-content-center">
             <div className="col-12">
-              <div className="projectMobile"><h3>Projects</h3></div>
-              <ProjectList 
-                projects={this.state.projects}
-                changeActiveProject={this.changeActiveProject}
-                moveStars={this.moveStars}/>
+              <div className="projectMobile"><h2>Projects</h2></div>
+              <BrowserView>
+                <ProjectList 
+                  projects={this.state.projects}
+                  changeActiveProject={this.changeActiveProject}
+                  moveStars={this.moveStars}/>
+              </BrowserView>
+              <MobileView>
+                <ProjectListMobile 
+                  projects={this.state.projects}
+                  moveStars={this.moveStars}/>
+              </MobileView>
             </div>
           </div>
           <div className="skills row align-items-center justify-content-center mt-5">

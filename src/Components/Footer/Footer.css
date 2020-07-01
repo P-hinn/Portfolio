@@ -4,4 +4,20 @@
 
 .white:hover{
     color: gray;
+    transition: linear 0.2s;
+    cursor: pointer;
+}
+
+.contactStyle{
+    cursor: default;
+}
+
+.contactStyle:hover{
+    color: gray;
+    transition: linear 0.2s;
+    cursor: pointer;
+}
+
+.contactStyle h5:hover{
+    text-decoration: underline;
 }

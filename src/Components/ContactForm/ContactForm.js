@@ -2,8 +2,6 @@ import React from 'react';
 
 import './ContactForm.css';
 
-const API_PATH = 'https://www.philippniestroj.com/ContactForm.php';
-
 class ContactForm extends React.Component{
 
     constructor(props){

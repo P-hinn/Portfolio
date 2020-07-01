@@ -77,6 +77,12 @@ img{
     color: gray;
 }
 
+/* .col{
+    border: 1px solid red;
+}
+.row{
+    border: 1px solid green;
+} */
 
 @media (max-width: 700px){
     .project{
@@ -84,20 +90,39 @@ img{
         min-width: 300px;
         width: auto;
         margin: 0 auto;
+        padding: 0;
     }
 
+    h3{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    h6{
+        font-size: 20px;
+    }
+    
+    p{
+        font-size: 24px;
+    }
+
+    
     img{
-        margin-top: 10px;
+        width: 100px;
+        height: 100px;
     }
 
     .description{
         height: auto;
         max-height: 1000px;
         overflow: auto;
+        font-size: 24px;
+        margin: 5px;
     }
 
     .expand{
         width: 100%;
         display: inline-block;
     }
+
 }

@@ -112,3 +112,24 @@ h3{
   }
 }
 
+@media (max-width:600px){
+  body{
+    font-size: 12px;
+    font-weight: lighter;
+  }
+  h1{
+    font-size: 36px;
+  }
+  
+  h2{
+    font-size: 28px;
+    font-weight: lighter;
+  }
+  
+  .projectMobile h3, h3{
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: lighter !important;
+  }
+}
+

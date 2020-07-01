@@ -14,12 +14,10 @@ class Footer extends React.Component{
     render(){
         return(
             <div className="row justify-content-center align-items-center">
-                <div className="col m-4" 
+                <div className="col m-4 white contactStyle" 
                 onClick={this.openForm}>
-                     <a className="white"> 
-                        <i className="fas fa-envelope fa-3x"></i>
-                        <h5>Contact</h5>
-                    </a>
+                    <i className="fas fa-envelope fa-3x"></i>
+                    <h5>Contact</h5>
                 </div>
                 <div className="col m-4">
                     <a href="https://github.com/P-hinn" 
